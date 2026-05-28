@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M Pepper Joinery — Sales Pipeline</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Sales Pipeline</h1>
+      <div class="meta">
+        <div class="clock" id="clock">--:--</div>
+        <div id="date">—</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="kpis">
+        <div class="kpi blue">
+          <div class="label">Open Enquiries</div>
+          <div class="value" id="kpi-enquiries">—</div>
+          <div class="sub" id="kpi-enquiries-sub">awaiting quote</div>
+        </div>
+        <div class="kpi amber">
+          <div class="label">Quotes Out</div>
+          <div class="value" id="kpi-quotes">—</div>
+          <div class="sub" id="kpi-quotes-sub">awaiting decision</div>
+        </div>
+        <div class="kpi green">
+          <div class="label">Won This Month</div>
+          <div class="value" id="kpi-won">—</div>
+          <div class="sub" id="kpi-won-sub">orders placed</div>
+        </div>
+        <div class="kpi purple">
+          <div class="label">Pipeline Value</div>
+          <div class="value" id="kpi-pipeline">—</div>
+          <div class="sub" id="kpi-pipeline-sub">in open quotes</div>
+        </div>
+      </section>
+
+      <section class="panel chart-panel">
+        <h2>Pipeline Funnel</h2>
+        <canvas id="funnel-chart"></canvas>
+      </section>
+
+      <section class="panel table-panel">
+        <h2>Quotes Awaiting Decision</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Job No</th>
+                <th>Customer</th>
+                <th>Job Name</th>
+                <th>Value</th>
+                <th>Quoted</th>
+              </tr>
+            </thead>
+            <tbody id="jobs-rows">
+              <tr><td colspan="5" style="color:#6b7896;padding:24px 8px;">Loading…</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-foot" id="table-footer">—</div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <span class="status" id="conn-status"><span class="dot"></span><span id="conn-status-text">Connecting…</span></span>
+        <span id="error-banner"></span>
+      </div>
+      <div id="last-updated">Last updated: —</div>
+    </footer>
+  </div>
+
+  <!-- Sign-in overlay (shown only when silent sign-in fails) -->
+  <div id="signin-overlay">
+    <h2>Sign in to view the dashboard</h2>
+    <p>This dashboard reads project data from SharePoint. Sign in with your Microsoft 365 account to continue. Once signed in on this TV, it will stay signed in
