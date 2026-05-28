@@ -76,7 +76,15 @@
     </footer>
   </div>
 
-  <!-- Sign-in overlay (shown only when silent sign-in fails) -->
   <div id="signin-overlay">
     <h2>Sign in to view the dashboard</h2>
-    <p>This dashboard reads project data from SharePoint. Sign in with your Microsoft 365 account to continue. Once signed in on this TV, it will stay signed in
+    <p>This dashboard reads project data from SharePoint. Sign in with your Microsoft 365 account to continue. Once signed in on this TV, it will stay signed in.</p>
+    <button id="signin-btn">Sign in with Microsoft</button>
+  </div>
+
+  <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
